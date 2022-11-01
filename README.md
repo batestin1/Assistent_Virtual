@@ -7,7 +7,7 @@
 
 >> <h3> Solution Architecture </h3>
 
-![delta](assistent_virtual/img/img.png)
+![delta](img/img.png)
 
 
 
