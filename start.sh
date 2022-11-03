@@ -18,10 +18,8 @@ then
     clear
     echo "Checking dependencies"
     sleep 1
-    if source env/env.sh
+    if source assistent_virtual/env/env.sh
     then
-        pip install --upgrade pip > /dev/null
-        source assistent_virtual/env/pip.esh
         sleep 1
         echo "Running the scripts"
         sleep 1

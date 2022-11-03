@@ -1,0 +1,13 @@
+SpeechRecognition
+tqdm
+playsound==1.2.2
+gtts
+pyttsx3
+joblib
+pillow
+pip-chill
+pyaudio
+regex
+speech-recognition-fork
+pandas
+texto-no-espelho
