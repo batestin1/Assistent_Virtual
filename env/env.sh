@@ -11,6 +11,9 @@
 #####################################################################
 
 #variables
+COUNT=$(cat  assistent_virtual/env/packages.txt | sed ':a;$!N;s/\n/ /;ta;')
+FILE=$(cat assistent_virtual/env/packages.txt)
+
 clear
 
 
@@ -57,11 +60,22 @@ else
 fi
 
 sleep 1
-echo "Checking the packages needed for the project"
 
-if ! $(pip show pyttsx3 | sed -n '/Location/{p;q;}')
-then
-    echo "Existe"
-else
-    echo "Não Existe"
-fi
+for i in $COUNT
+do 
+    CHECK=$(pip show "$i" | grep -i "$i" | sed -n '1p' | sed 's/Name://g')
+
+    if [ $CHECK = "$i" ] 2>/dev/null
+    then
+        sleep 1
+        echo "The package $i is already installed"
+    else
+        sleep 1
+        echo "The package $i is not installed"
+        sleep 1
+        echo "Installing $i now"
+        pip3 install $i
+        sleep 1
+        echo "The package $i is already installed"
+    fi
+done
